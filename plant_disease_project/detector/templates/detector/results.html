@@ -1,0 +1,259 @@
+{% extends "detector/base.html" %}
+{% load static %}
+
+{% block title %}Analysis Results – PlantGuard AI{% endblock %}
+{% block meta_description %}Plant disease detection results including image quality assessment, disease prediction and management recommendations.{% endblock %}
+
+{% block content %}
+<section class="page-hero page-hero-sm">
+  <div class="container">
+    <h1>Analysis Results</h1>
+    <p>Review the image quality assessment, prediction and recommendations below.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+
+    <!-- ── Model Not Ready ──────────────────────────────────────────────── -->
+    {% if model_missing %}
+    <div class="alert-box alert-box-warning" role="alert" aria-live="assertive">
+      <div class="alert-box-icon" aria-hidden="true">⚠️</div>
+      <div class="alert-box-body">
+        <h2>Model Not Ready</h2>
+        <p>The trained CNN model has not been found. Prediction cannot proceed.</p>
+        <p><strong>To enable predictions:</strong></p>
+        <ol>
+          <li>Copy the PlantVillage dataset to <code>plant_disease_project/dataset/PlantVillage/</code></li>
+          <li>Activate the virtual environment: <code>venv311\Scripts\activate</code></li>
+          <li>Run the training script from the <code>plant_disease_project/</code> directory:<br/>
+              <code>python detector/ml/train.py</code></li>
+          <li>Training will save the model to <code>models_saved/plant_disease_model.h5</code></li>
+        </ol>
+        {% if model_error %}<pre class="error-pre">{{ model_error }}</pre>{% endif %}
+      </div>
+    </div>
+    {% endif %}
+
+    <!-- ── Unrecoverable Quality ────────────────────────────────────────── -->
+    {% if unrecoverable_quality %}
+    <div class="alert-box alert-box-error" role="alert" aria-live="assertive">
+      <div class="alert-box-icon" aria-hidden="true">🚫</div>
+      <div class="alert-box-body">
+        <h2>Image Quality Too Poor for Reliable Classification</h2>
+        <p>The uploaded image is extremely blurry or low-contrast (quality score:
+           <strong>{{ quality_report.quality_score }}</strong>/100).
+           Enhancement cannot reliably recover disease features at this quality level.</p>
+        <p>Please retake the photo:</p>
+        <ul>
+          <li>Hold the camera steady and allow autofocus to lock before shooting.</li>
+          <li>Use natural daylight or good indoor lighting.</li>
+          <li>Ensure the leaf fills most of the frame.</li>
+        </ul>
+      </div>
+    </div>
+    {% endif %}
+
+    <!-- ── Inference Error ──────────────────────────────────────────────── -->
+    {% if inference_error %}
+    <div class="alert-box alert-box-error" role="alert">
+      <div class="alert-box-icon" aria-hidden="true">❌</div>
+      <div class="alert-box-body">
+        <h2>Prediction Error</h2>
+        <p>{{ inference_error }}</p>
+      </div>
+    </div>
+    {% endif %}
+
+    <!-- ── Results Grid (shown when prediction succeeded) ──────────────── -->
+    {% if prediction %}
+    <div class="results-grid">
+
+      <!-- Left column: images + quality -->
+      <div class="results-left">
+
+        <!-- Image comparison -->
+        <div class="result-card" aria-labelledby="images-heading">
+          <h2 id="images-heading" class="card-title">
+            🖼️ Image{% if enhancement_applied %} Comparison{% endif %}
+          </h2>
+          <div class="image-compare {% if not enhancement_applied %}single{% endif %}">
+            <figure>
+              <img src="{{ original_url }}" alt="Original uploaded leaf image" class="result-img" />
+              <figcaption>Original Image</figcaption>
+            </figure>
+            {% if enhancement_applied %}
+            <figure>
+              <img src="{{ enhanced_url }}" alt="Enhanced version of the leaf image" class="result-img" />
+              <figcaption>Enhanced Image <small>(used for inference)</small></figcaption>
+            </figure>
+            {% endif %}
+          </div>
+        </div>
+
+        <!-- Quality report -->
+        <div class="result-card" aria-labelledby="quality-heading">
+          <h2 id="quality-heading" class="card-title">🔍 Image Quality Assessment</h2>
+          <dl class="quality-dl">
+            <div class="dl-row">
+              <dt>Quality Label</dt>
+              <dd>
+                <span class="badge badge-quality-{{ quality_report.quality_label|lower|cut:' ' }}">
+                  {{ quality_report.quality_label }}
+                </span>
+              </dd>
+            </div>
+            <div class="dl-row">
+              <dt>Quality Score</dt>
+              <dd>{{ quality_report.quality_score }} / 100</dd>
+            </div>
+            <div class="dl-row">
+              <dt>Blur Detected</dt>
+              <dd>{% if quality_report.is_blurred %}⚠ Yes{% else %}✅ No{% endif %}</dd>
+            </div>
+            <div class="dl-row">
+              <dt>Enhancement Applied</dt>
+              <dd>{% if enhancement_applied %}✅ Yes (CLAHE + unsharp mask){% else %}Not required{% endif %}</dd>
+            </div>
+            <div class="dl-row">
+              <dt>Image Dimensions</dt>
+              <dd>{{ quality_report.width }} × {{ quality_report.height }} px</dd>
+            </div>
+          </dl>
+          {% for msg in quality_report.messages %}
+          <p class="quality-note">ℹ {{ msg }}</p>
+          {% endfor %}
+          <p class="quality-note quality-disclaimer">
+            <strong>Note:</strong> Blur detection is an estimate based on edge sharpness.
+            It cannot guarantee whether disease-related features are preserved.
+          </p>
+        </div>
+
+      </div><!-- /results-left -->
+
+      <!-- Right column: prediction + recommendations -->
+      <div class="results-right">
+
+        <!-- Prediction -->
+        <div class="result-card prediction-card" aria-labelledby="pred-heading">
+          <h2 id="pred-heading" class="card-title">🧠 Disease Prediction</h2>
+
+          <div class="prediction-main">
+            <div class="predicted-label">{{ prediction.predicted_label }}</div>
+            <div class="confidence-row" aria-label="Model confidence score">
+              <span class="confidence-label">Model Confidence</span>
+              <span class="confidence-value">{{ confidence_percent }}%</span>
+            </div>
+            <div class="confidence-bar-wrap" role="progressbar"
+                 aria-valuenow="{{ confidence_percent }}"
+                 aria-valuemin="0" aria-valuemax="100"
+                 aria-label="Confidence bar">
+              <div class="confidence-bar" style="width: {{ confidence_percent }}%;"></div>
+            </div>
+            <p class="confidence-disclaimer">
+              ⚠ Confidence is a model output score, not a guarantee of correctness.
+              High confidence does not ensure the prediction is accurate.
+            </p>
+          </div>
+
+          <!-- Top-5 predictions -->
+          {% if prediction.top_k %}
+          <details class="top-k-details">
+            <summary>Show top {{ prediction.top_k|length }} predictions</summary>
+            <ol class="top-k-list">
+              {% for label, conf in prediction.top_k %}
+              <li>
+                <span class="top-k-label">{{ label }}</span>
+                <span class="top-k-conf">{{ conf|floatformat:4 }}</span>
+              </li>
+              {% endfor %}
+            </ol>
+          </details>
+          {% endif %}
+        </div>
+
+        <!-- Recommendations -->
+        {% if recommendation %}
+        <div class="result-card" aria-labelledby="rec-heading">
+          <h2 id="rec-heading" class="card-title">📋 Management Recommendations</h2>
+
+          {% if recommendation.pathogen and recommendation.pathogen != "None detected" %}
+          <p class="pathogen-info">
+            <strong>Pathogen:</strong> <em>{{ recommendation.pathogen }}</em>
+          </p>
+          {% endif %}
+
+          <p class="rec-description">{{ recommendation.description }}</p>
+
+          {% if recommendation.symptoms %}
+          <div class="rec-section">
+            <h3>Symptoms</h3>
+            <ul>{% for s in recommendation.symptoms %}<li>{{ s }}</li>{% endfor %}</ul>
+          </div>
+          {% endif %}
+
+          {% if recommendation.management %}
+          <div class="rec-section">
+            <h3>🌱 Management Practices</h3>
+            <ul>{% for m in recommendation.management %}<li>{{ m }}</li>{% endfor %}</ul>
+          </div>
+          {% endif %}
+
+          {% if recommendation.preventive_measures %}
+          <div class="rec-section">
+            <h3>🛡️ Preventive Measures</h3>
+            <ul>{% for p in recommendation.preventive_measures %}<li>{{ p }}</li>{% endfor %}</ul>
+          </div>
+          {% endif %}
+
+          {% if recommendation.consult_expert_if %}
+          <div class="rec-section rec-section-alert">
+            <h3>👨‍🌾 Consult an Agricultural Expert If</h3>
+            <ul>{% for c in recommendation.consult_expert_if %}<li>{{ c }}</li>{% endfor %}</ul>
+          </div>
+          {% endif %}
+
+          <p class="rec-disclaimer">
+            <strong>Disclaimer:</strong> These recommendations are for general guidance only,
+            based on agricultural extension resources. Do not act on this information without
+            consulting a qualified plant pathologist or agricultural extension officer.
+          </p>
+        </div>
+
+        {% else %}
+        <div class="result-card" aria-labelledby="no-rec-heading">
+          <h2 id="no-rec-heading" class="card-title">📋 Recommendations</h2>
+          <p class="no-rec-note">
+            No verified management guidance is currently available for
+            <strong>{{ prediction.predicted_label }}</strong>.
+            Please consult your local agricultural extension service.
+          </p>
+        </div>
+        {% endif %}
+
+      </div><!-- /results-right -->
+    </div><!-- /results-grid -->
+    {% endif %}
+
+    <!-- ── Show partial results if quality or original available ───────── -->
+    {% if original_url and not prediction and not model_missing and not unrecoverable_quality and not inference_error %}
+    <div class="result-card">
+      <h2 class="card-title">🖼️ Uploaded Image</h2>
+      <img src="{{ original_url }}" alt="Uploaded leaf image" class="result-img-single" />
+      {% if quality_report %}
+      <p>Quality Score: {{ quality_report.quality_score }}/100 — {{ quality_report.quality_label }}</p>
+      {% endif %}
+    </div>
+    {% endif %}
+
+    <!-- ── Analyse Another Image button ────────────────────────────────── -->
+    <div class="results-actions">
+      <a href="{% url 'detector:upload' %}" class="btn btn-primary" id="analyse-another-btn">
+        🌿 Analyse Another Image
+      </a>
+      <a href="{% url 'detector:home' %}" class="btn btn-outline">← Back to Home</a>
+    </div>
+
+  </div>
+</section>
+{% endblock %}

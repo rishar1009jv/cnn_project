@@ -1,0 +1,85 @@
+{% extends "detector/base.html" %}
+
+{% block title %}Prediction History – PlantGuard AI{% endblock %}
+
+{% block content %}
+<section class="page-hero page-hero-sm">
+  <div class="container">
+    <h1>Prediction History</h1>
+    <p>Audit log of recent automated leaf diagnoses and quality evaluations.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    {% if records %}
+    <div class="table-wrap" role="region" aria-label="Prediction history table" tabindex="0">
+      <table class="history-table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Date &amp; Time</th>
+            <th scope="col">Predicted Diagnosis</th>
+            <th scope="col">Confidence</th>
+            <th scope="col">Quality Score</th>
+            <th scope="col">Blur Detected</th>
+            <th scope="col">Auto-Enhanced</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for r in records %}
+          <tr>
+            <td><strong>#{{ forloop.counter }}</strong></td>
+            <td>{{ r.created_at|date:"d M Y, H:i" }}</td>
+            <td>
+              <strong style="color: var(--primary-800);">{{ r.human_label|default:"—" }}</strong>
+              <div style="font-size: 0.75rem; color: var(--text-light); font-family: monospace;">{{ r.predicted_class }}</div>
+            </td>
+            <td>
+              <span class="badge {% if r.confidence_percent >= 70 %}badge-success{% elif r.confidence_percent >= 40 %}badge-warning{% else %}badge-danger{% endif %}">
+                {{ r.confidence_percent }}%
+              </span>
+            </td>
+            <td>
+              {% if r.image_quality_score is not None %}
+                <span class="badge {% if r.image_quality_score >= 60 %}badge-success{% elif r.image_quality_score >= 30 %}badge-warning{% else %}badge-danger{% endif %}">
+                  {{ r.image_quality_score|floatformat:1 }} / 100
+                </span>
+              {% else %}
+                <span style="color: var(--text-light);">—</span>
+              {% endif %}
+            </td>
+            <td>
+              {% if r.is_blurred %}
+                <span class="badge badge-warning">⚠ Blurred</span>
+              {% else %}
+                <span class="badge badge-success">✓ Sharp</span>
+              {% endif %}
+            </td>
+            <td>
+              {% if r.enhancement_applied %}
+                <span class="badge badge-info">✨ CLAHE / Sharp</span>
+              {% else %}
+                <span style="color: var(--text-light);">None required</span>
+              {% endif %}
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    {% else %}
+    <div class="empty-state" role="status">
+      <div class="empty-state-icon" aria-hidden="true">🌱</div>
+      <h2>No predictions recorded yet</h2>
+      <p>Analyze your first leaf image to see quality metrics and AI predictions here.</p>
+      <a href="{% url 'detector:upload' %}" class="btn btn-primary btn-lg">🌿 Analyse Leaf Image</a>
+    </div>
+    {% endif %}
+
+    <p style="margin-top: 1.5rem; font-size: 0.85rem; color: var(--text-light); text-align: center;">
+      🔒 Records are securely logged in the local SQLite database for verification, academic auditing, and model tracking.
+    </p>
+  </div>
+</section>
+{% endblock %}

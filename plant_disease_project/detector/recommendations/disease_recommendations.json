@@ -1,0 +1,803 @@
+{
+  "_metadata": {
+    "description": "Disease-specific management guidance for PlantVillage classes.",
+    "disclaimer": "This information is for general guidance only. Always consult a qualified agricultural extension officer or plant pathologist before applying any treatment. Do not rely solely on this system for crop management decisions.",
+    "sources": [
+      "USDA NRCS Plant Disease Fact Sheets",
+      "FAO Integrated Pest Management Guidelines",
+      "University Extension Plant Disease Diagnostics",
+      "Penn State Extension – Plant Disease"
+    ]
+  },
+  "Apple___Apple_scab": {
+    "display_name": "Apple – Apple Scab",
+    "pathogen": "Fungus: Venturia inaequalis",
+    "description": "Apple scab is one of the most common apple diseases worldwide. It produces olive-green to brown lesions on leaves and fruit surfaces, often causing early leaf drop and misshapen or cracked fruit.",
+    "symptoms": [
+      "Olive-green or brown spots on leaves",
+      "Velvety fungal growth on lesions",
+      "Scabby, cracked spots on fruit",
+      "Premature leaf and fruit drop in severe infections"
+    ],
+    "management": [
+      "Remove and destroy fallen infected leaves in autumn to break the disease cycle.",
+      "Apply approved fungicides (e.g., captan or myclobutanil) during early spring when infection periods are forecast.",
+      "Prune trees to improve canopy airflow and reduce humidity.",
+      "Plant scab-resistant apple varieties where feasible."
+    ],
+    "preventive_measures": [
+      "Monitor weather forecasts; apply preventive sprays before rainy periods.",
+      "Avoid overhead irrigation.",
+      "Maintain good orchard sanitation throughout the season."
+    ],
+    "consult_expert_if": [
+      "Severe defoliation occurs early in the season.",
+      "Fungicide-resistant strains are suspected (poor control despite timely sprays).",
+      "More than 20% of fruit are affected."
+    ]
+  },
+  "Apple___Black_rot": {
+    "display_name": "Apple – Black Rot",
+    "pathogen": "Fungus: Botryosphaeria obtusa",
+    "description": "Black rot affects apples, causing circular brown lesions on fruit (often with concentric rings), leaf spots, and cankers on branches. Infected fruit eventually mummify and remain on the tree.",
+    "symptoms": [
+      "Circular, brown to black lesions on fruit with alternating light and dark rings",
+      "Purple-bordered leaf spots turning brown at centre",
+      "Cankers with sunken, cracked bark on branches"
+    ],
+    "management": [
+      "Prune out and destroy all cankers and dead wood.",
+      "Remove mummified fruit from the tree and ground.",
+      "Apply fungicides (e.g., captan, thiophanate-methyl) during the growing season according to label directions.",
+      "Reduce tree stress through proper fertilisation and irrigation."
+    ],
+    "preventive_measures": [
+      "Maintain orchard sanitation – remove dead wood promptly.",
+      "Avoid wounding trees during pruning when wet.",
+      "Ensure good airflow through canopy."
+    ],
+    "consult_expert_if": [
+      "Large cankers appear on main scaffolding branches.",
+      "Disease spreads rapidly despite management.",
+      "Resistant cultivar options are needed."
+    ]
+  },
+  "Apple___Cedar_apple_rust": {
+    "display_name": "Apple – Cedar Apple Rust",
+    "pathogen": "Fungus: Gymnosporangium juniperi-virginianae",
+    "description": "Cedar apple rust is a fungal disease requiring two hosts – eastern red cedar (juniper) for winter spore production and apple for spring infection. It causes bright orange-yellow lesions on apple leaves and fruit.",
+    "symptoms": [
+      "Bright yellow-orange spots on upper leaf surface in spring",
+      "Orange, tube-like structures (aecia) on undersides of lesions",
+      "Deformed fruit with orange-red discolouration"
+    ],
+    "management": [
+      "Remove nearby eastern red cedar or juniper hosts where practical.",
+      "Apply protectant fungicides (e.g., myclobutanil, mancozeb) at pink bud and petal fall stages.",
+      "Plant rust-resistant apple varieties."
+    ],
+    "preventive_measures": [
+      "Survey surrounding area for cedar galls in late winter; remove them before they release spores.",
+      "Time fungicide applications to coincide with spore release during wet weather."
+    ],
+    "consult_expert_if": [
+      "Heavy infection occurs despite timely fungicide programmes.",
+      "Fruit set is significantly reduced."
+    ]
+  },
+  "Apple___healthy": {
+    "display_name": "Apple – Healthy",
+    "pathogen": "None detected",
+    "description": "The leaf appears healthy with no visible signs of disease.",
+    "symptoms": [],
+    "management": [
+      "Continue regular scouting for early pest and disease detection.",
+      "Maintain balanced fertilisation and adequate irrigation.",
+      "Follow an integrated pest management (IPM) programme."
+    ],
+    "preventive_measures": [
+      "Keep orchard floor clean.",
+      "Prune annually to maintain canopy structure.",
+      "Monitor for early signs of common apple diseases and pests."
+    ],
+    "consult_expert_if": [
+      "Unusual symptoms appear later in the season.",
+      "Yield or fruit quality declines unexpectedly."
+    ]
+  },
+  "Blueberry___healthy": {
+    "display_name": "Blueberry – Healthy",
+    "pathogen": "None detected",
+    "description": "The leaf appears healthy.",
+    "symptoms": [],
+    "management": ["Continue regular monitoring and standard cultural practices."],
+    "preventive_measures": ["Maintain proper soil pH (4.5–5.5) and drainage."],
+    "consult_expert_if": ["Wilting, discolouration or stunting appears."]
+  },
+  "Cherry_(including_sour)___Powdery_mildew": {
+    "display_name": "Cherry – Powdery Mildew",
+    "pathogen": "Fungus: Podosphaera clandestina",
+    "description": "Powdery mildew of cherry forms a white, powdery fungal coating on young leaves, shoots and sometimes fruit. Infected leaves curl or distort and may drop prematurely.",
+    "symptoms": [
+      "White or grey powdery patches on leaf surfaces",
+      "Curled or distorted young leaves",
+      "Stunted shoot growth"
+    ],
+    "management": [
+      "Apply sulphur-based or systemic fungicides (e.g., myclobutanil) at first sign of infection.",
+      "Prune to open the canopy and improve airflow.",
+      "Avoid excess nitrogen fertilisation that promotes succulent, susceptible growth."
+    ],
+    "preventive_measures": [
+      "Favour resistant varieties.",
+      "Monitor new growth closely in warm, dry weather followed by humid nights."
+    ],
+    "consult_expert_if": ["Infection persists despite two fungicide applications."]
+  },
+  "Cherry_(including_sour)___healthy": {
+    "display_name": "Cherry – Healthy",
+    "pathogen": "None detected",
+    "description": "The leaf appears healthy.",
+    "symptoms": [],
+    "management": ["Continue regular scouting and standard IPM practices."],
+    "preventive_measures": ["Prune annually and maintain tree vigour."],
+    "consult_expert_if": ["Unexpected symptoms appear."]
+  },
+  "Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot": {
+    "display_name": "Corn – Gray Leaf Spot (Cercospora)",
+    "pathogen": "Fungus: Cercospora zeae-maydis",
+    "description": "Gray leaf spot is a major foliar disease of maize, producing long, rectangular, tan-to-grey lesions with parallel edges, especially on lower leaves. Severe infections can cause significant yield loss.",
+    "symptoms": [
+      "Rectangular, grey-tan lesions with parallel sides running between leaf veins",
+      "Lesions may coalesce in humid conditions, killing large leaf areas",
+      "Premature leaf death in severe cases"
+    ],
+    "management": [
+      "Plant resistant hybrids – this is the most effective management strategy.",
+      "Rotate away from maize for at least one year to reduce inoculum.",
+      "Apply foliar fungicides (e.g., strobilurin or triazole groups) at VT/R1 stage if economic threshold is reached.",
+      "Incorporate crop residue to speed decomposition of the fungal inoculum."
+    ],
+    "preventive_measures": [
+      "Select hybrids with documented GLS tolerance.",
+      "Avoid continuous maize monoculture in high-humidity regions.",
+      "Scout fields from V6 onwards."
+    ],
+    "consult_expert_if": [
+      "More than 50% of the leaf area on upper canopy leaves is lesioned before tasselling.",
+      "Fungicide selection or resistance management guidance is needed."
+    ]
+  },
+  "Corn_(maize)___Common_rust_": {
+    "display_name": "Corn – Common Rust",
+    "pathogen": "Fungus: Puccinia sorghi",
+    "description": "Common rust produces small, brick-red pustules on both leaf surfaces that may rupture and release powdery spores. It is most damaging on susceptible varieties and in cool, humid climates.",
+    "symptoms": [
+      "Small, oval to elongated brick-red pustules on both leaf surfaces",
+      "Pustules rupture and release reddish-brown urediniospores",
+      "Heavily infected leaves turn yellow and die prematurely"
+    ],
+    "management": [
+      "Use resistant hybrids wherever available.",
+      "Apply foliar fungicides (triazoles, strobilurins) if disease is severe and crop is at a susceptible stage.",
+      "Early planting can help the crop escape peak rust pressure."
+    ],
+    "preventive_measures": [
+      "Monitor fields from V6 stage, particularly in cooler weather.",
+      "Scout particularly after wet periods with moderate temperatures (16–23 °C)."
+    ],
+    "consult_expert_if": [
+      "Pustules appear before tasselling on a susceptible hybrid.",
+      "Disease spreads to the ear leaves rapidly."
+    ]
+  },
+  "Corn_(maize)___Northern_Leaf_Blight": {
+    "display_name": "Corn – Northern Leaf Blight",
+    "pathogen": "Fungus: Exserohilum turcicum",
+    "description": "Northern leaf blight causes large, cigar-shaped, tan-grey lesions on maize leaves. Severe infections before or during grain fill can substantially reduce yield.",
+    "symptoms": [
+      "Long (2.5–15 cm), tan to grey, cigar-shaped lesions",
+      "Dark green, water-soaked borders initially",
+      "Green-black fungal sporulation within lesions in humid weather"
+    ],
+    "management": [
+      "Plant NLB-resistant hybrids.",
+      "Rotate crops to reduce residue-borne inoculum.",
+      "Apply foliar fungicides (triazole or strobilurin) at first sign of disease on susceptible hybrids.",
+      "Manage crop residue by tillage or incorporation."
+    ],
+    "preventive_measures": [
+      "Scout from V8 stage.",
+      "Avoid irrigating in late afternoon – wet foliage overnight promotes infection."
+    ],
+    "consult_expert_if": [
+      "Upper canopy leaves are heavily infected before mid-grain fill.",
+      "Fungicide resistance is suspected."
+    ]
+  },
+  "Corn_(maize)___healthy": {
+    "display_name": "Corn – Healthy",
+    "pathogen": "None detected",
+    "description": "The leaf appears healthy.",
+    "symptoms": [],
+    "management": ["Continue regular scouting and follow IPM guidelines."],
+    "preventive_measures": ["Rotate crops and use certified seed."],
+    "consult_expert_if": ["Unexplained wilting, stalk softening or discolouration appears."]
+  },
+  "Grape___Black_rot": {
+    "display_name": "Grape – Black Rot",
+    "pathogen": "Fungus: Guignardia bidwellii",
+    "description": "Black rot is a destructive fungal disease of grapes that causes leaf spots, shoot lesions, and fruit rot. Infected berries shrivel into hard, black mummies.",
+    "symptoms": [
+      "Tan to brown circular leaf spots with dark borders",
+      "Black, shrivelled mummified berries",
+      "Dark lesions on shoots and petioles"
+    ],
+    "management": [
+      "Remove and destroy mummified fruit from the vine and ground before budbreak.",
+      "Apply protectant or systemic fungicides (e.g., myclobutanil, mancozeb) from budbreak through berry set.",
+      "Prune vines to improve canopy airflow.",
+      "Eliminate sources of primary inoculum by removing infected wood."
+    ],
+    "preventive_measures": [
+      "Maintain good vineyard sanitation.",
+      "Train vines to promote quick drying of foliage.",
+      "Apply a dormant spray if mummies cannot be fully removed."
+    ],
+    "consult_expert_if": [
+      "More than 5% of berries are mummified at harvest.",
+      "Disease persists despite a full spray programme."
+    ]
+  },
+  "Grape___Esca_(Black_Measles)": {
+    "display_name": "Grape – Esca (Black Measles)",
+    "pathogen": "Fungal complex: Phaeomoniella chlamydospora, Phaeoacremonium spp., Fomitiporia mediterranea",
+    "description": "Esca is a trunk disease complex causing chronic foliar symptoms (tiger-stripe discolouration), berries with dark spots, and internal wood decay. It can lead to vine death.",
+    "symptoms": [
+      "Interveinal leaf discolouration with yellow/red margins (tiger-stripe pattern)",
+      "Dark, sunken spots on ripe berries (measles symptom)",
+      "Sudden wilting and death of individual arms or whole vines (apoplexy)",
+      "Brown streaking in cross-sections of infected wood"
+    ],
+    "management": [
+      "There is currently no curative treatment for established Esca infections.",
+      "Remove and destroy severely affected vines to limit spread.",
+      "Prune during dry weather and seal large pruning wounds with commercial wound protectants.",
+      "Consider double-pruning strategies to delay wood exposure during moist conditions."
+    ],
+    "preventive_measures": [
+      "Use clean, certified propagation material.",
+      "Protect pruning wounds immediately after cutting.",
+      "Avoid pruning during rainy or humid weather."
+    ],
+    "consult_expert_if": [
+      "Apoplexy (sudden vine collapse) occurs.",
+      "More than 10% of vines show symptoms.",
+      "Replanting decisions need to be made."
+    ]
+  },
+  "Grape___Leaf_blight_(Isariopsis_Leaf_Spot)": {
+    "display_name": "Grape – Leaf Blight (Isariopsis Leaf Spot)",
+    "pathogen": "Fungus: Pseudocercospora vitis",
+    "description": "Grape leaf blight causes angular to irregular brown or tan spots on leaves, which may lead to premature defoliation and reduced photosynthetic capacity.",
+    "symptoms": [
+      "Angular, dark brown spots on older leaves",
+      "Yellowing around lesions",
+      "Premature leaf drop in severe cases"
+    ],
+    "management": [
+      "Remove and destroy infected leaves.",
+      "Apply copper-based or approved fungicides as a protectant measure.",
+      "Improve canopy airflow through timely shoot positioning and leaf removal."
+    ],
+    "preventive_measures": [
+      "Maintain canopy management to reduce humidity.",
+      "Avoid excessive irrigation."
+    ],
+    "consult_expert_if": [
+      "Rapid defoliation threatens fruit ripening.",
+      "Disease identity needs laboratory confirmation."
+    ]
+  },
+  "Grape___healthy": {
+    "display_name": "Grape – Healthy",
+    "pathogen": "None detected",
+    "description": "The leaf appears healthy.",
+    "symptoms": [],
+    "management": ["Continue monitoring and standard IPM programme."],
+    "preventive_measures": ["Maintain canopy management and vineyard sanitation."],
+    "consult_expert_if": ["Unusual symptoms appear."]
+  },
+  "Orange___Haunglongbing_(Citrus_greening)": {
+    "display_name": "Orange – Huanglongbing (Citrus Greening)",
+    "pathogen": "Bacterium: Candidatus Liberibacter asiaticus (vector: Asian citrus psyllid)",
+    "description": "Huanglongbing (HLB), also known as citrus greening, is a devastating bacterial disease spread by the Asian citrus psyllid. There is currently no cure; infected trees decline progressively.",
+    "symptoms": [
+      "Asymmetric (blotchy) yellowing of leaves (not uniform chlorosis)",
+      "Stunted, upright shoots (flush) with small, yellowed leaves",
+      "Lopsided, bitter, green-coloured fruit that stays green even at maturity",
+      "Progressive tree decline and death within 5–8 years"
+    ],
+    "management": [
+      "Remove and destroy infected trees promptly to prevent spread.",
+      "Control the Asian citrus psyllid vector using insecticides and/or biological control.",
+      "Apply nutritional programmes (foliar micronutrients) to prolong productivity of mildly affected trees.",
+      "Use only certified, disease-free nursery stock for replanting."
+    ],
+    "preventive_measures": [
+      "Install psyllid monitoring traps in the grove.",
+      "Source trees exclusively from certified, screenhouse-grown nurseries.",
+      "Enforce quarantine regulations on movement of citrus plant material."
+    ],
+    "consult_expert_if": [
+      "Suspicious blotchy mottling is observed.",
+      "Psyllid populations are detected.",
+      "Tree removal and replanting decisions are needed."
+    ]
+  },
+  "Peach___Bacterial_spot": {
+    "display_name": "Peach – Bacterial Spot",
+    "pathogen": "Bacterium: Xanthomonas arboricola pv. pruni",
+    "description": "Bacterial spot causes water-soaked spots on peach leaves that turn dark and fall out, leaving a shot-hole appearance. Fruit develop dark, sunken lesions that reduce marketability.",
+    "symptoms": [
+      "Small, water-soaked leaf spots that turn dark brown with a yellow halo",
+      "Shot-hole appearance as lesion centres fall out",
+      "Dark, sunken lesions on fruit surface",
+      "Cankers on twigs in severe infections"
+    ],
+    "management": [
+      "Apply copper-based bactericides during the growing season (consult local extension for timing).",
+      "Select resistant or tolerant varieties for new plantings.",
+      "Prune out infected shoots during dry weather and destroy prunings.",
+      "Avoid excessive nitrogen – overly vigorous growth is more susceptible."
+    ],
+    "preventive_measures": [
+      "Avoid overhead irrigation.",
+      "Apply preventive copper sprays before wet weather periods.",
+      "Maintain moderate tree vigour through balanced fertilisation."
+    ],
+    "consult_expert_if": [
+      "Twig cankers appear and spread rapidly.",
+      "Significant fruit crop loss occurs despite a spray programme.",
+      "Variety selection advice is needed for replanting."
+    ]
+  },
+  "Peach___healthy": {
+    "display_name": "Peach – Healthy",
+    "pathogen": "None detected",
+    "description": "The leaf appears healthy.",
+    "symptoms": [],
+    "management": ["Continue monitoring and follow standard orchard IPM practices."],
+    "preventive_measures": ["Prune annually and monitor for early disease or pest signs."],
+    "consult_expert_if": ["Unexpected symptoms appear."]
+  },
+  "Pepper,_bell___Bacterial_spot": {
+    "display_name": "Bell Pepper – Bacterial Spot",
+    "pathogen": "Bacterium: Xanthomonas euvesicatoria (and related Xanthomonas spp.)",
+    "description": "Bacterial spot of pepper causes water-soaked lesions on leaves and fruit that turn brown with a yellow halo. Severe infections cause early defoliation and fruit surface blemishes.",
+    "symptoms": [
+      "Small, water-soaked lesions on leaves and fruit",
+      "Lesions turn brown to black with yellow halos",
+      "Raised, rough scab-like spots on fruit",
+      "Premature defoliation in severe infections"
+    ],
+    "management": [
+      "Use disease-free transplants from certified sources.",
+      "Apply copper-based bactericides on a preventive schedule.",
+      "Rotate with non-solanaceous crops for at least two years.",
+      "Avoid overhead irrigation."
+    ],
+    "preventive_measures": [
+      "Treat seeds with hot water (52 °C for 30 minutes) before planting.",
+      "Avoid working in the field when foliage is wet.",
+      "Remove and destroy infected plant debris at season end."
+    ],
+    "consult_expert_if": [
+      "Copper-resistant strains are suspected (disease continues despite copper sprays).",
+      "Widespread defoliation threatens yield."
+    ]
+  },
+  "Pepper,_bell___healthy": {
+    "display_name": "Bell Pepper – Healthy",
+    "pathogen": "None detected",
+    "description": "The leaf appears healthy.",
+    "symptoms": [],
+    "management": ["Maintain monitoring and standard cultural practices."],
+    "preventive_measures": ["Rotate crops and use certified transplants."],
+    "consult_expert_if": ["Wilting, spots or abnormal growth appears."]
+  },
+  "Potato___Early_blight": {
+    "display_name": "Potato – Early Blight",
+    "pathogen": "Fungus: Alternaria solani",
+    "description": "Early blight is a common foliar disease of potato characterised by dark, concentric-ringed lesions on older leaves. It typically appears after tuber initiation under hot, dry weather interspersed with rain.",
+    "symptoms": [
+      "Dark brown to black lesions with concentric rings (target-board pattern) on older leaves",
+      "Yellow halo surrounding lesions",
+      "Lesions start on lower leaves and progress upward",
+      "Severe defoliation reduces tuber yield and quality"
+    ],
+    "management": [
+      "Apply preventive fungicides (e.g., chlorothalonil, mancozeb) once disease risk is high.",
+      "Maintain adequate plant nutrition – well-nourished plants are more tolerant.",
+      "Remove infected plant debris promptly.",
+      "Use certified disease-free seed tubers."
+    ],
+    "preventive_measures": [
+      "Plant certified seed and rotate crops annually.",
+      "Avoid water stress during the growing season.",
+      "Scout plants regularly from mid-season."
+    ],
+    "consult_expert_if": [
+      "Defoliation exceeds 30% before canopy closure.",
+      "Fungicide efficacy appears reduced."
+    ]
+  },
+  "Potato___Late_blight": {
+    "display_name": "Potato – Late Blight",
+    "pathogen": "Oomycete: Phytophthora infestans",
+    "description": "Late blight is a devastating oomycete disease historically responsible for the Irish Famine. It spreads explosively in cool, wet conditions, destroying foliage and tubers within days if untreated.",
+    "symptoms": [
+      "Pale green to dark brown water-soaked lesions on leaves, often at margins",
+      "White to grey sporulation on the underside of lesions in humid conditions",
+      "Rapid browning and collapse of foliage",
+      "Brown, greasy internal rot of tubers"
+    ],
+    "management": [
+      "Apply systemic fungicides (e.g., metalaxyl-M, dimethomorph) at first sign of infection – timing is critical.",
+      "Alternate with protectant fungicides to manage resistance.",
+      "Destroy infected foliage before harvest to protect tubers.",
+      "Use resistant varieties (check local extension recommendations)."
+    ],
+    "preventive_measures": [
+      "Monitor late blight forecasting systems and apply preventive sprays before infection periods.",
+      "Plant certified disease-free seed tubers.",
+      "Avoid overhead irrigation in the afternoon.",
+      "Ensure good field drainage."
+    ],
+    "consult_expert_if": [
+      "Lesions appear during a forecasted infection period without prior fungicide coverage.",
+      "More than 10% of plants show symptoms.",
+      "Tuber infection is detected at harvest."
+    ]
+  },
+  "Potato___healthy": {
+    "display_name": "Potato – Healthy",
+    "pathogen": "None detected",
+    "description": "The leaf appears healthy.",
+    "symptoms": [],
+    "management": ["Continue scouting and standard cultural practices."],
+    "preventive_measures": ["Rotate crops and use certified seed."],
+    "consult_expert_if": ["Wilting, dark spots or tuber symptoms appear."]
+  },
+  "Raspberry___healthy": {
+    "display_name": "Raspberry – Healthy",
+    "pathogen": "None detected",
+    "description": "The leaf appears healthy.",
+    "symptoms": [],
+    "management": ["Maintain monitoring and follow standard cane management practices."],
+    "preventive_measures": ["Prune old canes and maintain good airflow."],
+    "consult_expert_if": ["Unusual spots or cane dieback appears."]
+  },
+  "Soybean___healthy": {
+    "display_name": "Soybean – Healthy",
+    "pathogen": "None detected",
+    "description": "The leaf appears healthy.",
+    "symptoms": [],
+    "management": ["Continue monitoring and follow standard soybean IPM guidelines."],
+    "preventive_measures": ["Rotate with non-legume crops and use certified seed."],
+    "consult_expert_if": ["Yellowing, wilting or pod symptoms appear."]
+  },
+  "Squash___Powdery_mildew": {
+    "display_name": "Squash – Powdery Mildew",
+    "pathogen": "Fungi: Podosphaera xanthii and Erysiphe cichoracearum",
+    "description": "Powdery mildew of squash and cucurbits appears as white, powdery fungal growth on leaf surfaces. It spreads rapidly in warm, dry conditions with high relative humidity at night.",
+    "symptoms": [
+      "White, powdery fungal patches on upper leaf surfaces",
+      "Yellowing and browning of leaves as infection progresses",
+      "Premature leaf senescence and reduced fruit quality"
+    ],
+    "management": [
+      "Apply sulphur or potassium bicarbonate fungicides at first sign.",
+      "Systemic fungicides (e.g., triazoles) can be used if infection is severe.",
+      "Remove heavily infected leaves.",
+      "Plant resistant varieties."
+    ],
+    "preventive_measures": [
+      "Avoid planting in low-airflow areas.",
+      "Water in the morning to allow foliage to dry during the day.",
+      "Monitor from mid-season onwards."
+    ],
+    "consult_expert_if": [
+      "Plants collapse before fruit maturity.",
+      "Multiple fungicide applications fail to control the disease."
+    ]
+  },
+  "Strawberry___Leaf_scorch": {
+    "display_name": "Strawberry – Leaf Scorch",
+    "pathogen": "Fungus: Diplocarpon earlianum",
+    "description": "Leaf scorch produces small, irregular, dark purple spots on strawberry leaves that coalesce, giving a scorched appearance. Severe infections weaken plants and reduce berry yield.",
+    "symptoms": [
+      "Small, irregular dark purple to red spots on leaves",
+      "Spots enlarge and centres turn tan or grey",
+      "Confluent lesions give a scorched appearance",
+      "Premature defoliation in severe cases"
+    ],
+    "management": [
+      "Remove and destroy infected leaves.",
+      "Apply fungicides (e.g., captan or pyraclostrobin) on a protective schedule.",
+      "Renovate matted-row planting after harvest.",
+      "Plant resistant varieties."
+    ],
+    "preventive_measures": [
+      "Avoid overhead irrigation.",
+      "Improve row spacing and airflow.",
+      "Mulch around plants to reduce soil-splash inoculum."
+    ],
+    "consult_expert_if": [
+      "Widespread leaf death occurs before harvest.",
+      "Crowns appear water-soaked or rotted (may indicate a different disease)."
+    ]
+  },
+  "Strawberry___healthy": {
+    "display_name": "Strawberry – Healthy",
+    "pathogen": "None detected",
+    "description": "The leaf appears healthy.",
+    "symptoms": [],
+    "management": ["Continue standard strawberry management practices."],
+    "preventive_measures": ["Renovate planting after harvest; replace old crowns."],
+    "consult_expert_if": ["Spots, wilting or root problems appear."]
+  },
+  "Tomato___Bacterial_spot": {
+    "display_name": "Tomato – Bacterial Spot",
+    "pathogen": "Bacterium: Xanthomonas vesicatoria and related species",
+    "description": "Bacterial spot is a common tomato disease causing dark, water-soaked leaf and fruit lesions. It spreads by rain splash and physical contact.",
+    "symptoms": [
+      "Small, dark, water-soaked spots on leaves with yellow halos",
+      "Spots turn brown, dry and may crack",
+      "Raised, scabby lesions on green fruit",
+      "Defoliation and reduced fruit set in severe infections"
+    ],
+    "management": [
+      "Apply copper-based bactericides preventively.",
+      "Avoid overhead irrigation and working in wet fields.",
+      "Rotate with non-solanaceous crops.",
+      "Use disease-free transplants."
+    ],
+    "preventive_measures": [
+      "Hot-water seed treatment (52 °C for 30 minutes).",
+      "Stake and prune plants for good airflow.",
+      "Apply mulch to reduce soil-splash."
+    ],
+    "consult_expert_if": [
+      "Copper resistance is confirmed by laboratory testing.",
+      "More than 30% of plants are defoliated."
+    ]
+  },
+  "Tomato___Early_blight": {
+    "display_name": "Tomato – Early Blight",
+    "pathogen": "Fungus: Alternaria solani",
+    "description": "Early blight is a very common tomato disease, characterised by dark concentric-ringed lesions (bulls-eye pattern) on older leaves. It progresses upwards and can cause significant defoliation.",
+    "symptoms": [
+      "Dark, circular lesions with concentric rings on older leaves",
+      "Yellow halo around lesions",
+      "Stem and fruit can also be infected",
+      "Premature leaf drop from the base upwards"
+    ],
+    "management": [
+      "Apply fungicides (chlorothalonil, mancozeb, azoxystrobin) on a 7–10-day schedule.",
+      "Remove infected lower leaves and dispose of them away from the field.",
+      "Maintain adequate nutrition, especially nitrogen.",
+      "Stake plants to keep foliage off the soil."
+    ],
+    "preventive_measures": [
+      "Use certified disease-free transplants.",
+      "Rotate away from Solanaceae for 2–3 years.",
+      "Mulch the soil surface to reduce splash inoculum.",
+      "Avoid overhead irrigation."
+    ],
+    "consult_expert_if": [
+      "Disease progresses rapidly despite fungicide treatment.",
+      "Upper canopy leaves are affected before fruit set."
+    ]
+  },
+  "Tomato___Late_blight": {
+    "display_name": "Tomato – Late Blight",
+    "pathogen": "Oomycete: Phytophthora infestans",
+    "description": "Late blight is a destructive disease of tomatoes, capable of destroying entire fields within a week under cool, wet conditions. It is the same pathogen that caused the Irish Famine.",
+    "symptoms": [
+      "Irregular, greasy-looking, dark-green to brown lesions on leaves",
+      "White sporulation on underside of lesions in humid conditions",
+      "Brown, firm lesions on tomato fruit",
+      "Rapid collapse of foliage in favourable conditions"
+    ],
+    "management": [
+      "Apply systemic fungicides (metalaxyl-M, dimethomorph, fluopicolide) immediately at first detection.",
+      "Alternate fungicide groups to manage resistance.",
+      "Destroy severely infected plants promptly.",
+      "Do not plant tomatoes in field areas with confirmed infection until rotation is complete."
+    ],
+    "preventive_measures": [
+      "Monitor weather-based late blight forecasting services.",
+      "Apply protective fungicides before expected infection periods.",
+      "Ensure good plant spacing and staking for airflow.",
+      "Remove and destroy volunteer potato or tomato plants."
+    ],
+    "consult_expert_if": [
+      "Infection spreads despite fungicide coverage.",
+      "Metalaxyl resistance is suspected.",
+      "Entire field shows symptoms."
+    ]
+  },
+  "Tomato___Leaf_Mold": {
+    "display_name": "Tomato – Leaf Mold",
+    "pathogen": "Fungus: Passalora fulva (formerly Cladosporium fulvum)",
+    "description": "Leaf mold is a greenhouse and tunnel tomato disease favoured by high humidity. It produces distinctive yellow patches on upper leaf surfaces with olive-green to grey-brown velvety sporulation on the undersides.",
+    "symptoms": [
+      "Pale yellow-green patches on upper leaf surfaces",
+      "Olive-green to grey-brown velvety sporulation on leaf undersides",
+      "Infected leaves yellow and wither",
+      "Rarely affects fruit, but can cause blossom drop"
+    ],
+    "management": [
+      "Reduce humidity through ventilation and heating (in protected crops).",
+      "Apply fungicides (chlorothalonil, mancozeb, or difenoconazole) if ventilation alone is insufficient.",
+      "Remove and destroy infected leaves.",
+      "Space plants adequately and train side-shoots to improve airflow."
+    ],
+    "preventive_measures": [
+      "Plant resistant varieties (races differ – confirm race present locally).",
+      "Avoid overhead irrigation in tunnels.",
+      "Disinfect structures and equipment between cropping seasons."
+    ],
+    "consult_expert_if": [
+      "More than 25% of leaf area is affected.",
+      "Disease appears resistant to standard fungicides."
+    ]
+  },
+  "Tomato___Septoria_leaf_spot": {
+    "display_name": "Tomato – Septoria Leaf Spot",
+    "pathogen": "Fungus: Septoria lycopersici",
+    "description": "Septoria leaf spot causes numerous small, circular spots with dark borders and light-grey centres on tomato leaves. It spreads upward from lower leaves and can cause severe defoliation.",
+    "symptoms": [
+      "Small, circular spots (3–5 mm) with dark borders and grey-white centres",
+      "Tiny black pycnidia (spore bodies) visible in lesion centres",
+      "Yellowing and browning of heavily infected leaves",
+      "Progressive defoliation from the base upward"
+    ],
+    "management": [
+      "Apply fungicides (chlorothalonil, mancozeb, copper-based) on a regular schedule.",
+      "Remove infected lower leaves.",
+      "Stake plants and manage canopy for airflow.",
+      "Mulch soil surface to reduce splash."
+    ],
+    "preventive_measures": [
+      "Rotate away from Solanaceae for 2 years.",
+      "Use certified disease-free transplants.",
+      "Avoid working in the field when plants are wet."
+    ],
+    "consult_expert_if": [
+      "Defoliation reaches the upper canopy before fruit maturity.",
+      "Disease does not respond to standard fungicide programme."
+    ]
+  },
+  "Tomato___Spider_mites Two-spotted_spider_mite": {
+    "display_name": "Tomato – Spider Mites (Two-spotted)",
+    "pathogen": "Arachnid pest: Tetranychus urticae",
+    "description": "Two-spotted spider mites are tiny arachnids that cause stippling, bronzing and eventual necrosis of tomato leaves. They thrive in hot, dry conditions and can rapidly colonise plants.",
+    "symptoms": [
+      "Fine, pale yellow stippling on upper leaf surfaces",
+      "Bronze to brown leaf discolouration in heavy infestations",
+      "Fine silk webbing on leaf undersides and between leaves",
+      "Tiny moving dots (mites) visible on leaf undersides"
+    ],
+    "management": [
+      "Apply miticides (abamectin, bifenazate, spiromesifen) on a rotation to manage resistance.",
+      "Introduce predatory mites (Phytoseiidae) as biological control in protected crops.",
+      "Ensure adequate irrigation – water-stressed plants are more susceptible.",
+      "Avoid pesticides that kill natural mite predators."
+    ],
+    "preventive_measures": [
+      "Scout leaf undersides from mid-season.",
+      "Maintain adequate soil moisture.",
+      "Avoid broad-spectrum insecticides that disrupt natural enemies."
+    ],
+    "consult_expert_if": [
+      "Miticide applications fail to control the population.",
+      "Resistance management recommendations are needed."
+    ]
+  },
+  "Tomato___Target_Spot": {
+    "display_name": "Tomato – Target Spot",
+    "pathogen": "Fungus: Corynespora cassiicola",
+    "description": "Target spot causes brown, target-like lesions on leaves, stems and fruit of tomatoes. It is favoured by warm, humid conditions and can cause significant defoliation.",
+    "symptoms": [
+      "Brown circular to irregular lesions with concentric rings on leaves",
+      "Dark brown lesions on stems and petioles",
+      "Sunken, brown fruit lesions",
+      "Premature defoliation"
+    ],
+    "management": [
+      "Apply fungicides (azoxystrobin, chlorothalonil, or fluxapyroxad) on a preventive schedule.",
+      "Remove and dispose of infected plant material.",
+      "Improve canopy ventilation."
+    ],
+    "preventive_measures": [
+      "Use certified transplants.",
+      "Rotate away from Solanaceae.",
+      "Avoid prolonged leaf wetness."
+    ],
+    "consult_expert_if": [
+      "Significant defoliation occurs before fruit maturity.",
+      "Fungicide rotation advice is needed."
+    ]
+  },
+  "Tomato___Tomato_Yellow_Leaf_Curl_Virus": {
+    "display_name": "Tomato – Yellow Leaf Curl Virus (TYLCV)",
+    "pathogen": "Virus: Tomato yellow leaf curl virus (vector: Bemisia tabaci – silverleaf whitefly)",
+    "description": "TYLCV is a destructive geminivirus spread by silverleaf whiteflies. Infected plants are severely stunted with upward-curled, yellowed leaves and dramatically reduced fruit set. There is no cure.",
+    "symptoms": [
+      "Upward curling and yellowing of young leaves",
+      "Severely stunted plant growth",
+      "Flower drop and very few fruit",
+      "Small, pale green leaves on new growth"
+    ],
+    "management": [
+      "Remove and destroy infected plants immediately to reduce inoculum source.",
+      "Control whitefly vector with systemic insecticides (imidacloprid, thiamethoxam) or insect-growth regulators.",
+      "Use reflective silver mulch to deter whiteflies.",
+      "Plant TYLCV-resistant varieties."
+    ],
+    "preventive_measures": [
+      "Use resistant or tolerant varieties.",
+      "Install yellow sticky traps to monitor whitefly levels.",
+      "Establish whitefly-free transplants from screened nurseries.",
+      "Remove crop debris promptly after harvest."
+    ],
+    "consult_expert_if": [
+      "More than 10% of plants are infected early in the season.",
+      "Whitefly populations are not controlled by insecticides (resistance suspected).",
+      "Variety selection for your local TYLCV strain is needed."
+    ]
+  },
+  "Tomato___Tomato_mosaic_virus": {
+    "display_name": "Tomato – Tomato Mosaic Virus (ToMV)",
+    "pathogen": "Virus: Tomato mosaic virus",
+    "description": "ToMV is a mechanically transmitted tobamovirus causing mosaic discolouration, leaf distortion and reduced fruit quality in tomatoes. It is highly stable in soil and plant debris.",
+    "symptoms": [
+      "Mosaic pattern of light and dark green on leaves",
+      "Leaf distortion, fern-like narrowing or blistering",
+      "Stunted plant growth",
+      "Internal browning of fruit in some strains"
+    ],
+    "management": [
+      "There is no curative treatment; remove and destroy infected plants.",
+      "Wash hands, tools and clothing thoroughly before entering the field or greenhouse.",
+      "Use virus-indexed seed and certified transplants.",
+      "Plant ToMV-resistant varieties (R genes Tm-1, Tm-2, Tm-2²)."
+    ],
+    "preventive_measures": [
+      "Avoid using tobacco products near tomatoes – tobacco carries related viruses.",
+      "Disinfect tools with bleach solution (10%) or milk between plants.",
+      "Control aphid and thrips vectors.",
+      "Remove and destroy all crop residues after harvest."
+    ],
+    "consult_expert_if": [
+      "Rapid spread through the planting is observed.",
+      "Virus identity needs laboratory confirmation.",
+      "Replacement variety options are needed."
+    ]
+  },
+  "Tomato___healthy": {
+    "display_name": "Tomato – Healthy",
+    "pathogen": "None detected",
+    "description": "The leaf appears healthy.",
+    "symptoms": [],
+    "management": ["Continue regular scouting and standard IPM practices."],
+    "preventive_measures": [
+      "Rotate crops annually.",
+      "Use certified transplants.",
+      "Monitor for early signs of disease and pests."
+    ],
+    "consult_expert_if": ["Any unusual symptoms appear on leaves, stems or fruit."]
+  }
+}

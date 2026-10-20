@@ -1,0 +1,113 @@
+{% extends "detector/base.html" %}
+{% load static %}
+
+{% block title %}Upload Leaf Image – PlantGuard AI{% endblock %}
+{% block meta_description %}Upload a plant leaf image for AI-powered disease detection and management recommendations.{% endblock %}
+
+{% block content %}
+<section class="page-hero page-hero-sm">
+  <div class="container">
+    <h1>Upload Leaf Image</h1>
+    <p>Upload a clear, in-focus photo of the plant leaf for analysis.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container container-narrow">
+
+    <!-- Upload guidelines -->
+    <div class="guidelines-card" role="note">
+      <h2 class="sr-only">Photo Guidelines</h2>
+      <div class="guideline-grid">
+        <div class="guideline-item guideline-good">
+          <span aria-hidden="true">✅</span>
+          <div>
+            <strong>Good photo tips</strong>
+            <ul>
+              <li>In-focus, well-lit image</li>
+              <li>Leaf fills most of the frame</li>
+              <li>Natural daylight preferred</li>
+              <li>JPG, JPEG or PNG format</li>
+            </ul>
+          </div>
+        </div>
+        <div class="guideline-item guideline-bad">
+          <span aria-hidden="true">⚠️</span>
+          <div>
+            <strong>Avoid these</strong>
+            <ul>
+              <li>Blurry or out-of-focus images</li>
+              <li>Very dark or overexposed photos</li>
+              <li>Multiple leaves in one photo</li>
+              <li>Files larger than 10 MB</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Upload form -->
+    <div class="upload-card">
+      <form method="post" enctype="multipart/form-data" id="uploadForm" novalidate
+            aria-label="Leaf image upload form">
+        {% csrf_token %}
+
+        <!-- Drop zone -->
+        <div class="drop-zone" id="dropZone" role="button" tabindex="0"
+             aria-label="Click or drag and drop a leaf image here">
+          <div class="drop-zone-inner" id="dropZoneInner">
+            <div class="drop-icon" aria-hidden="true">🌿</div>
+            <p class="drop-title">Drag &amp; drop your image here</p>
+            <p class="drop-sub">or click to browse files</p>
+            <p class="drop-formats">JPG · JPEG · PNG &nbsp;|&nbsp; Max 10 MB</p>
+          </div>
+          <!-- Preview area (hidden until image selected) -->
+          <div class="drop-preview" id="dropPreview" style="display:none;">
+            <img id="previewImg" src="#" alt="Selected leaf preview" />
+            <p id="previewName" class="preview-name"></p>
+            <button type="button" class="btn btn-sm btn-outline" id="changeImageBtn">
+              Change Image
+            </button>
+          </div>
+          {{ form.image }}
+        </div>
+
+        <!-- Form errors -->
+        {% if form.image.errors %}
+        <div class="field-errors" role="alert">
+          {% for error in form.image.errors %}
+          <p class="error-msg">⚠ {{ error }}</p>
+          {% endfor %}
+        </div>
+        {% endif %}
+
+        <!-- Non-field errors -->
+        {% if form.non_field_errors %}
+        <div class="field-errors" role="alert">
+          {% for error in form.non_field_errors %}
+          <p class="error-msg">⚠ {{ error }}</p>
+          {% endfor %}
+        </div>
+        {% endif %}
+
+        <!-- Submit -->
+        <button type="submit" class="btn btn-primary btn-full btn-lg" id="submitBtn">
+          <span id="submitText">🔍 Analyse Image</span>
+          <span id="submitSpinner" class="spinner" aria-hidden="true" style="display:none;"></span>
+          <span id="submitLoading" style="display:none;">Analysing…</span>
+        </button>
+
+        <p class="upload-note">
+          Your image is used only for this analysis and is not shared.
+          Predictions are model estimates – not guaranteed diagnoses.
+        </p>
+      </form>
+    </div>
+
+  </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'detector/js/upload.js' %}"></script>
+{% endblock %}

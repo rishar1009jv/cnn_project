@@ -1,0 +1,175 @@
+{% extends "detector/base.html" %}
+{% load static %}
+
+{% block title %}PlantGuard AI – Home{% endblock %}
+{% block meta_description %}AI-powered plant disease detection. Upload a leaf image to identify diseases and get expert management recommendations.{% endblock %}
+
+{% block content %}
+
+<!-- ── Hero Section ──────────────────────────────────────────────────────── -->
+<section class="hero" aria-labelledby="hero-heading">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="container hero-content">
+    <div class="hero-text">
+      <span class="hero-badge">🔬 Deep Learning Powered</span>
+      <h1 id="hero-heading" class="hero-title">
+        Detect Plant Diseases<br/>
+        <span class="text-green">Instantly with AI</span>
+      </h1>
+      <p class="hero-subtitle">
+        Upload a leaf image and our CNN model will identify potential diseases,
+        assess image quality, and provide science-based management guidance.
+      </p>
+      <div class="hero-actions">
+        <a href="{% url 'detector:upload' %}" class="btn btn-primary btn-lg" id="hero-analyse-btn">
+          🌿 Analyse a Leaf
+        </a>
+        <a href="#how-it-works" class="btn btn-outline btn-lg">How It Works</a>
+      </div>
+      {% if not model_ready %}
+      <div class="alert alert-warning mt-3" role="alert">
+        <strong>⚠ Model Not Trained Yet.</strong>
+        Place the PlantVillage dataset in <code>dataset/PlantVillage/</code> and run
+        <code>python detector/ml/train.py</code> to train the model before using predictions.
+      </div>
+      {% endif %}
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <div class="hero-card">
+        <div class="hero-card-icon">🌱</div>
+        <div class="hero-card-stat">38+</div>
+        <div class="hero-card-label">Disease Classes</div>
+      </div>
+      <div class="hero-card">
+        <div class="hero-card-icon">🧠</div>
+        <div class="hero-card-stat">CNN</div>
+        <div class="hero-card-label">Deep Learning</div>
+      </div>
+      <div class="hero-card">
+        <div class="hero-card-icon">🔍</div>
+        <div class="hero-card-stat">Quality</div>
+        <div class="hero-card-label">Assessment</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── How It Works ──────────────────────────────────────────────────────── -->
+<section class="section" id="how-it-works" aria-labelledby="how-heading">
+  <div class="container">
+    <div class="section-header">
+      <h2 id="how-heading">How It Works</h2>
+      <p>A transparent, step-by-step AI pipeline</p>
+    </div>
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-number" aria-hidden="true">1</div>
+        <div class="step-icon" aria-hidden="true">📤</div>
+        <h3>Upload Image</h3>
+        <p>Upload a JPG or PNG photo of the plant leaf. The system accepts images up to 10 MB.</p>
+      </div>
+      <div class="step-connector" aria-hidden="true">→</div>
+      <div class="step-card">
+        <div class="step-number" aria-hidden="true">2</div>
+        <div class="step-icon" aria-hidden="true">🔍</div>
+        <h3>Quality Assessment</h3>
+        <p>The image is analysed for blur and contrast. Low-quality images are flagged and, where appropriate, conservatively enhanced.</p>
+      </div>
+      <div class="step-connector" aria-hidden="true">→</div>
+      <div class="step-card">
+        <div class="step-number" aria-hidden="true">3</div>
+        <div class="step-icon" aria-hidden="true">🧠</div>
+        <h3>CNN Prediction</h3>
+        <p>A trained MobileNetV2-based model classifies the disease. The top prediction and confidence score are displayed.</p>
+      </div>
+      <div class="step-connector" aria-hidden="true">→</div>
+      <div class="step-card">
+        <div class="step-number" aria-hidden="true">4</div>
+        <div class="step-icon" aria-hidden="true">📋</div>
+        <h3>Management Advice</h3>
+        <p>Disease-specific management practices, preventive measures and expert consultation triggers are presented.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Features ─────────────────────────────────────────────────────────── -->
+<section class="section section-alt" aria-labelledby="features-heading">
+  <div class="container">
+    <div class="section-header">
+      <h2 id="features-heading">Key Features</h2>
+      <p>Built for research, designed for reliability</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon" aria-hidden="true">🛡️</div>
+        <h3>Honest AI</h3>
+        <p>No hardcoded results or fake confidence. Predictions come from an actual trained model. Limitations are clearly stated.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon" aria-hidden="true">🖼️</div>
+        <h3>Image Quality Check</h3>
+        <p>Laplacian-variance blur detection flags poor-quality images before inference, with a clear explanation of the estimate's limitations.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon" aria-hidden="true">✨</div>
+        <h3>Conservative Enhancement</h3>
+        <p>CLAHE contrast enhancement and gentle denoising applied only when needed. Original image always preserved.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon" aria-hidden="true">📊</div>
+        <h3>Research Evaluation</h3>
+        <p>Includes accuracy, precision, recall and F1-score evaluation. Blur vs. enhanced comparison analysis included.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon" aria-hidden="true">📚</div>
+        <h3>Expert Recommendations</h3>
+        <p>Disease management guidance sourced from agricultural extension resources. Chemical instructions are not invented.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon" aria-hidden="true">🔒</div>
+        <h3>Secure & Validated</h3>
+        <p>All uploads validated server-side. Files are checked for type, size and image integrity before processing.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Supported Plants ──────────────────────────────────────────────────── -->
+<section class="section" aria-labelledby="plants-heading">
+  <div class="container">
+    <div class="section-header">
+      <h2 id="plants-heading">Supported Plants & Diseases</h2>
+      <p>Trained on the PlantVillage dataset — classes discovered automatically from your dataset</p>
+    </div>
+    <div class="plants-grid">
+      {% for plant in supported_plants %}
+      <div class="plant-card">
+        <h3 class="plant-name">{{ plant.name }}</h3>
+        <ul class="disease-list" aria-label="{{ plant.name }} diseases">
+          {% for disease in plant.diseases %}
+          <li class="{% if disease == 'Healthy' %}healthy-tag{% endif %}">{{ disease }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endfor %}
+    </div>
+    <p class="disclaimer-note">
+      <strong>Note:</strong> The exact classes available depend on the PlantVillage dataset you provide.
+      The model discovers classes automatically from your dataset directory.
+    </p>
+  </div>
+</section>
+
+<!-- ── CTA ───────────────────────────────────────────────────────────────── -->
+<section class="section cta-section" aria-labelledby="cta-heading">
+  <div class="container cta-content">
+    <h2 id="cta-heading">Ready to Analyse Your Plant?</h2>
+    <p>Upload a clear leaf image to get started. For best results, use a well-lit, in-focus photo.</p>
+    <a href="{% url 'detector:upload' %}" class="btn btn-primary btn-lg" id="cta-btn">
+      🌿 Start Analysis
+    </a>
+  </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{% block title %}PlantGuard AI – Plant Disease Detection{% endblock %}</title>
+  <meta name="description" content="{% block meta_description %}AI-powered plant disease detection and management guidance using deep learning.{% endblock %}" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet" />
+
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'detector/css/main.css' %}" />
+  {% block extra_css %}{% endblock %}
+</head>
+<body>
+
+<!-- ── Navigation ─────────────────────────────────────────────────────────── -->
+<nav class="navbar" aria-label="Main navigation">
+  <div class="container navbar-inner">
+    <a href="{% url 'detector:home' %}" class="navbar-brand" aria-label="PlantGuard AI Home">
+      <span class="brand-icon" aria-hidden="true">🌿</span>
+      <span class="brand-text">PlantGuard <strong>AI</strong></span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navMenu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-menu" id="navMenu" role="list">
+      <li><a href="{% url 'detector:home' %}" class="nav-link {% if request.resolver_match.url_name == 'home' %}active{% endif %}">Home</a></li>
+      <li><a href="{% url 'detector:upload' %}" class="nav-link nav-cta {% if request.resolver_match.url_name == 'upload' %}active{% endif %}">Analyse Leaf</a></li>
+      <li><a href="{% url 'detector:history' %}" class="nav-link {% if request.resolver_match.url_name == 'history' %}active{% endif %}">History</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ── Messages ───────────────────────────────────────────────────────────── -->
+{% if messages %}
+<div class="messages-container" role="alert" aria-live="polite">
+  {% for message in messages %}
+  <div class="alert alert-{{ message.tags }}">
+    <span>{{ message }}</span>
+    <button class="alert-close" aria-label="Dismiss">&times;</button>
+  </div>
+  {% endfor %}
+</div>
+{% endif %}
+
+<!-- ── Main content ───────────────────────────────────────────────────────── -->
+<main id="main-content">
+  {% block content %}{% endblock %}
+</main>
+
+<!-- ── Footer ─────────────────────────────────────────────────────────────── -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="brand-icon">🌿</span>
+        <span class="brand-text">PlantGuard <strong>AI</strong></span>
+        <p class="footer-tagline">AI-powered plant health monitoring for smarter agriculture.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="{% url 'detector:home' %}">Home</a></li>
+          <li><a href="{% url 'detector:upload' %}">Analyse a Leaf</a></li>
+          <li><a href="{% url 'detector:history' %}">Prediction History</a></li>
+        </ul>
+      </div>
+      <div class="footer-disclaimer">
+        <h4>Important Notice</h4>
+        <p>This system provides AI-generated predictions for educational and research purposes only.
+           Model confidence scores are not guarantees of correctness.
+           Always consult a qualified agricultural expert before taking action.</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 PlantGuard AI &mdash; Final Year Engineering Project &mdash; For Research Use Only</p>
+    </div>
+  </div>
+</footer>
+
+<script src="{% static 'detector/js/main.js' %}"></script>
+{% block extra_js %}{% endblock %}
+</body>
+</html>
