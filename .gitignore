@@ -7,7 +7,6 @@ venv*/
 
 # Training data and generated user data
 /dataset/
-/plant_disease_project/dataset/
 /plant_disease_project/uploads/
 /plant_disease_project/db.sqlite3
 *.sqlite3
